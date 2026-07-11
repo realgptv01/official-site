@@ -14,6 +14,8 @@
 <style>
 body {
   background-color: darkred;
+  margin: 0;
+  padding: 20px;
 }
 
 h1 {
@@ -42,7 +44,6 @@ a {
   color: white;
   text-align: left;
   display: inline-block;
-  margin-right: 15px;
 }
 
 .css-3d-text {
@@ -67,38 +68,152 @@ a {
                14px 14px 1px rgba(0,0,0,0.5),
                0px 0px 13px rgba(0,0,0,.2);
 }
+.nav-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 15px;
+  margin-bottom: 25px;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 20px;
+}
+
+.hamburger-toggle, .hamburger-button {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .nav-container {
+    position: relative;
+    justify-content: flex-start;
+  }
+
+  .hamburger-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 32px;
+    height: 24px;
+    cursor: pointer;
+    z-index: 10;
+  }
+
+  .hamburger-button span {
+    display: block;
+    height: 4px;
+    width: 100%;
+    background-color: white;
+    border-radius: 4px;
+    transform-origin: center center;
+  }
+  .hamburger-toggle:checked ~ .hamburger-button span:nth-child(1) {
+    animation: accordionWaveTop 0.6s ease-in-out;
+  }
+
+  .hamburger-toggle:checked ~ .hamburger-button span:nth-child(2) {
+    animation: accordionWaveMid 0.6s ease-in-out;
+    animation-delay: 0.08s;
+  }
+
+  .hamburger-toggle:checked ~ .hamburger-button span:nth-child(3) {
+    animation: accordionWaveBot 0.6s ease-in-out;
+    animation-delay: 0.16s;
+  }
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    background-color: #5c0000;
+    border: 1px solid #ff5e5e;
+    padding: 15px;
+    border-radius: 5px;
+    gap: 15px;
+    z-index: 9;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.5);
+  }
+
+  .hamburger-toggle:checked ~ .nav-menu {
+    display: flex;
+  }
+}
+@keyframes accordionWaveTop {
+  0% { transform: translateY(0) scaleY(1); }
+  30% { transform: translateY(-5px) scaleY(0.8); }
+  65% { transform: translateY(4px) scaleY(1.1); }
+  100% { transform: translateY(0) scaleY(1); }
+}
+
+@keyframes accordionWaveMid {
+  0% { transform: translateY(0) scaleY(1); }
+  30% { transform: translateY(-2px) scaleY(0.8); }
+  65% { transform: translateY(3px) scaleY(1.1); }
+  100% { transform: translateY(0) scaleY(1); }
+}
+
+@keyframes accordionWaveBot {
+  0% { transform: translateY(0) scaleY(1); }
+  30% { transform: translateY(-3px) scaleY(0.8); }
+  65% { transform: translateY(-4px) scaleY(1.1); }
+  100% { transform: translateY(0) scaleY(1); }
+}
 </style>
 </head>
 <body>
 
 <div class="css-3d-text">GabrielRR</div>
-<a href="/sitemap.html">Sitemap</a>
+<nav class="nav-container">
+  <input type="checkbox" id="nav-toggle" class="hamburger-toggle">
+  <label for="nav-toggle" class="hamburger-button">
+    <span></span>
+    <span></span>
+    <span></span>
+  </label>
+  <div class="nav-menu">
+    <a href="/index.html">Home</a>
+    <a href="/sitemap.html">Sitemap</a>
+    <a href="/music.html">Music</a>
+    <a href="/official-site/things-i-use.html">Things I use</a>
+    <a href="/tos.html">Terms of Service</a>
+    <a href="/tools.html">Tools</a>
+    <a href="/guides.html">Guides</a>
+  </div>
+</nav>
 
-<h1>Welcome!</h1>
-<p>I am GabrielRR, formerly GPTV01, a content creator on some platforms. I first started YouTube in September 20th, 2020.</p>
-<br>
+<hr style="border: 1px solid #ff5e5e; margin-bottom: 30px;">
 
-<h2>What I do</h2>
-<p>I make stuff, music, gameplay videos and more! I am a computer nerd and I mostly make animations in Blender and make idents for my friend Humdoo Gaming.</p>
-<a href="https://www.youtube.com/channel/UCVoYWiq2kyGxrWsDat_n-ug">link to Humdoo Gaming's channel</a>
-<br><br>
+<!-- Main Landing Block Content -->
+<main id="home-section">
+  <h1>Welcome!</h1>
+  <p>I am GabrielRR, formerly GPTV01, a content creator on some platforms. I first started YouTube in September 20th, 2020.</p>
+  <br>
 
-<h2>What I like</h2>
-<p>I like Portal-style games or Portal in general, the Source Engine, puzzle games, old technology, VHS, Blender and exploring computer parts.</p>
-<br>
+  <h2>What I do</h2>
+  <p>I make stuff, music, gameplay videos and more! I am a computer nerd and I mostly make animations in Blender and make idents for my friend Humdoo Gaming.</p>
+  <a href="https://www.youtube.com/channel/UCVoYWiq2kyGxrWsDat_n-ug" style="margin-right: 15px;">link to Humdoo Gaming's channel</a>
+  <br><br>
 
-<h2>My socials</h2>
-<a href="https://www.youtube.com/@realgabrielrr">YouTube</a>
-<a href="http://steamcommunity.com/id/gabrieldoeshammer">Steam</a>
-<a href="https://realgptv01.itch.io/">Itch.io</a>
-<a href="https://bsky.app/profile/realgptv01.bsky.social">Bluesky</a>
-<a href="https://open.spotify.com/artist/2njJXo6QN736YSMu6PXkcI?si=PNOAiqwGSK6u6r2pvDfDpw">Spotify</a>
-<br><br>
+  <h2>What I like</h2>
+  <p>I like Portal-style games or Portal in general, the Source Engine, puzzle games, old technology, VHS, Blender and exploring computer parts.</p>
+  <br>
 
-<h2>My work-in-progress mod - check it out!</h2>
-<a href="https://www.moddb.com/mods/watching-grass-grow" title="View Watching Grass Grow on ModDB" target="_blank">
-  <img src="https://button.moddb.com/popularity/medium/mods/70845.png" alt="Watching Grass Grow">
-</a>
+  <h2>My socials</h2>
+  <a href="https://www.youtube.com/@realgabrielrr" style="margin-right: 15px;">YouTube</a>
+  <a href="http://steamcommunity.com/id/gabrieldoeshammer" style="margin-right: 15px;">Steam</a>
+  <a href="https://realgptv01.itch.io/" style="margin-right: 15px;">Itch.io</a>
+  <a href="https://bsky.app/profile/realgptv01.bsky.social" style="margin-right: 15px;">Bluesky</a>
+  <a href="https://open.spotify.com/artist/2njJXo6QN736YSMu6PXkcI?si=PNOAiqwGSK6u6r2pvDfDpw" style="margin-right: 15px;">Spotify</a>
+  <br><br>
+
+  <h2>My work-in-progress mod - check it out!</h2>
+  <a href="https://www.moddb.com/mods/watching-grass-grow" title="View Watching Grass Grow on ModDB" target="_blank">
+    <img src="https://button.moddb.com/popularity/medium/mods/70845.png" alt="Watching Grass Grow">
+  </a>
+</main>
 
 </body>
 </html>
