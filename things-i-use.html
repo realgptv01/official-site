@@ -1,7 +1,22 @@
+
 <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:title" content="GabrielRR" />
+<meta property="og:description" content="Welcome to my official site! I make stuff, videos, mods, and more!" />
+<meta property="og:url" content="https://realgptv01.github.io/" />
+<meta property="og:image" content="https://realgptv01.github.io/gabrielrr_banner.png" />
+<meta property="og:type" content="website" />
+<meta name="theme-color" content="#8b0000">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<title>GabrielRR</title>
 <style>
 body {
   background-color: darkred;
+  margin: 0;
+  padding: 20px;
 }
 
 h1 {
@@ -23,39 +38,151 @@ p {
   color: white;
   text-align: left;
 }
+
 a {
   font-family: verdana;
   font-size: 20px;
   color: white;
   text-align: left;
+  display: inline-block;
 }
- .css-3d-text {
-    font-size: 95px;
-    color: #ff5e5e;
-    font-family: Verdana, Geneva, sans-serif;
-    text-shadow: 0px 0px 0 rgb(245,84,84),
-                 1px 1px 0 rgb(234,73,73),
-                 2px 2px 0 rgb(224,63,63),
-                 3px 3px 0 rgb(214,53,53),
-                 4px 4px 0 rgb(203,42,42),
-                 5px 5px 0 rgb(193,32,32),
-                 6px 6px 0 rgb(183,22,22),
-                 7px 7px 0 rgb(173,12,12),
-                 8px 8px 0 rgb(162,1,1),
-                 9px 9px 0 rgb(152,-9,0),
-                 10px 10px 0 rgb(142,-19,0),
-                 11px 11px 0 rgb(131,-30,0),
-                 12px 12px 0 rgb(121,-40,0),
-                 13px 13px  0 rgb(111,-50,0),
-                 14px 14px 13px rgba(0,0,0,1),
-                 14px 14px 1px rgba(0,0,0,0.5),
-                 0px 0px 13px rgba(0,0,0,.2);
- }
- 
+
+.css-3d-text {
+  font-size: 95px;
+  color: #ff5e5e;
+  font-family: Verdana, Geneva, sans-serif;
+  text-shadow: 0px 0px 0 rgb(245,84,84),
+               1px 1px 0 rgb(234,73,73),
+               2px 2px 0 rgb(224,63,63),
+               3px 3px 0 rgb(214,53,53),
+               4px 4px 0 rgb(203,42,42),
+               5px 5px 0 rgb(193,32,32),
+               6px 6px 0 rgb(183,22,22),
+               7px 7px 0 rgb(173,12,12),
+               8px 8px 0 rgb(162,1,1),
+               9px 9px 0 rgb(152,-9,0),
+               10px 10px 0 rgb(142,-19,0),
+               11px 11px 0 rgb(131,-30,0),
+               12px 12px 0 rgb(121,-40,0),
+               13px 13px 0 rgb(111,-50,0),
+               14px 14px 13px rgba(0,0,0,1),
+               14px 14px 1px rgba(0,0,0,0.5),
+               0px 0px 13px rgba(0,0,0,.2);
+}
+.nav-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 15px;
+  margin-bottom: 25px;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 20px;
+}
+
+.hamburger-toggle, .hamburger-button {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .nav-container {
+    position: relative;
+    justify-content: flex-start;
+  }
+
+  .hamburger-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 32px;
+    height: 24px;
+    cursor: pointer;
+    z-index: 10;
+  }
+
+  .hamburger-button span {
+    display: block;
+    height: 4px;
+    width: 100%;
+    background-color: white;
+    border-radius: 4px;
+    transform-origin: center center;
+  }
+  .hamburger-toggle:checked ~ .hamburger-button span:nth-child(1) {
+    animation: accordionWaveTop 0.6s ease-in-out;
+  }
+
+  .hamburger-toggle:checked ~ .hamburger-button span:nth-child(2) {
+    animation: accordionWaveMid 0.6s ease-in-out;
+    animation-delay: 0.08s;
+  }
+
+  .hamburger-toggle:checked ~ .hamburger-button span:nth-child(3) {
+    animation: accordionWaveBot 0.6s ease-in-out;
+    animation-delay: 0.16s;
+  }
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    background-color: #5c0000;
+    border: 1px solid #ff5e5e;
+    padding: 15px;
+    border-radius: 5px;
+    gap: 15px;
+    z-index: 9;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.5);
+  }
+
+  .hamburger-toggle:checked ~ .nav-menu {
+    display: flex;
+  }
+}
+@keyframes accordionWaveTop {
+  0% { transform: translateY(0) scaleY(1); }
+  30% { transform: translateY(-5px) scaleY(0.8); }
+  65% { transform: translateY(4px) scaleY(1.1); }
+  100% { transform: translateY(0) scaleY(1); }
+}
+
+@keyframes accordionWaveMid {
+  0% { transform: translateY(0) scaleY(1); }
+  30% { transform: translateY(-2px) scaleY(0.8); }
+  65% { transform: translateY(3px) scaleY(1.1); }
+  100% { transform: translateY(0) scaleY(1); }
+}
+
+@keyframes accordionWaveBot {
+  0% { transform: translateY(0) scaleY(1); }
+  30% { transform: translateY(-3px) scaleY(0.8); }
+  65% { transform: translateY(-4px) scaleY(1.1); }
+  100% { transform: translateY(0) scaleY(1); }
+}
 </style>
-<link rel="icon" type="image/x-icon" href="/favicon.ico">
-<div class="css-3d-text">GPTV01</div>
-<a href="/sitemap.html">Sitemap</a>
+</head>
+<body>
+
+<div class="css-3d-text">GabrielRR</div>
+<nav class="nav-container">
+  <input type="checkbox" id="nav-toggle" class="hamburger-toggle">
+  <label for="nav-toggle" class="hamburger-button">
+    <span></span>
+    <span></span>
+    <span></span>
+  </label>
+  <div class="nav-menu">
+    <a href="/index.html">Home</a>
+    <a href="/sitemap.html">Sitemap</a>
+    <a href="/official-site/things-i-use.html">Things I use</a>
+    <a href="/tos.html">Terms of Service</a>
+    <a href="/tools.html">Tools</a>
+    <a href="/guides.html">Guides</a>
+  </div>
+</nav>
 <h1>Things I use</h1>
 <p>Browser: <a href="https://www.google.com/intl/en_ca/chrome/">Chrome</a></p>
 <p>Game launcher: <a href="https://store.steampowered.com">Steam</a></p>
